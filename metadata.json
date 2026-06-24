@@ -1,0 +1,6 @@
+{
+  "name": "Librería Colores",
+  "description": "Sitio web y catálogo interactivo de Librería Colores: útiles escolares, artículos de oficina, impresiones y servicios librarios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
