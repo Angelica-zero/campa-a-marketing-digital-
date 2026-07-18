@@ -72,7 +72,7 @@ Quiero hacer una consulta sobre: *${formState.subject.toUpperCase()}*.
                 <div>
                   <span className="block text-[10px] uppercase font-bold text-slate-400">Nuestra Dirección</span>
                   <span className="block text-sm font-extrabold text-slate-800 mt-0.5">{STORE_INFO.address}</span>
-                  <span className="block text-xs text-slate-400">En pleno barrio de Almagro, CABA</span>
+                  <span className="block text-xs text-slate-400">Villa del Rosario, Entre Ríos</span>
                 </div>
               </div>
 

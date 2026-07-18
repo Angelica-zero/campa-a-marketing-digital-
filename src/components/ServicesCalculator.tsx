@@ -15,12 +15,12 @@ interface ServicesCalculatorProps {
 export default function ServicesCalculator({ onAddServiceEstimateToCart }: ServicesCalculatorProps) {
   // Calculator Form State
   const [options, setOptions] = useState<EstimateOptions>({
-    pageCount: 10,
+    pageCount: 1,
     copyCount: 1,
     colorType: 'bn',
     duplex: 'simple',
     paperSize: 'A4',
-    binding: true,
+    binding: false,
     laminating: false,
   });
 

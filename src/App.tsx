@@ -169,7 +169,7 @@ ${listContent}
                 </div>
                 <div>
                   <span className="block text-sm font-extrabold text-slate-800 font-display">Surtido Creativo</span>
-                  <span className="block text-xs text-slate-500">Inpiración en cada esquina</span>
+                  <span className="block text-xs text-slate-500">Inspiración en cada esquina</span>
                 </div>
               </div>
 
@@ -199,7 +199,7 @@ ${listContent}
                 </div>
                 <div>
                   <span className="block text-sm font-extrabold text-slate-800 font-display">Horarios Amplios</span>
-                  <span className="block text-xs text-slate-500">Abierto Sábados por la mañana</span>
+                  <span className="block text-xs text-slate-500">Lun-Vie: 8-12 y 16-19:30 | Sáb: Mañana</span>
                 </div>
               </div>
 

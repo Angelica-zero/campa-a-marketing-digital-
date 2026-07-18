@@ -286,8 +286,8 @@ export const STORE_INFO = {
   tagline: 'Todo para aprender y crear',
   phone: '+5491122334455', // Replace with fake but realistic whatsapp phone number
   whatsappUrl: 'https://wa.me/5491122334455', // Simulated link with pre-filled message generator
-  address: 'Av. Corrientes 4567, Almagro, CABA',
-  schedule: 'Lunes a Viernes de 8:30 a 19:30 hs. Sábados de 9:00 a 13:30 hs.',
+  address: 'Italia 32, Villa del Rosario, Entre Ríos',
+  schedule: 'Lunes a Viernes de 8:00 a 12:00 hs. y 16:00 a 19:30 hs. Sábados: Sólo por la mañana.',
   email: 'contacto@libreriacolores.com.ar',
   social: {
     instagram: '@libreria.colores',
