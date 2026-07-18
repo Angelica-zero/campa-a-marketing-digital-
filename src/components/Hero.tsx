@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { ArrowRight, Sparkles, Printer, ShoppingBag, Paintbrush } from 'lucide-react';
+import { ArrowRight, Sparkles, Printer, ShoppingBag, Paintbrush, Calculator } from 'lucide-react';
 import { motion } from 'motion/react';
 import LogoImage from '../assets/images/regenerated_image_1782218571600.png';
 
@@ -75,23 +75,37 @@ export default function Hero({ onNavigate }: HeroProps) {
             {/* CTAs */}
             <motion.div 
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+              className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-start gap-3 w-full"
             >
               <button
                 onClick={() => onNavigate('productos')}
-                className="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-brand-cyan to-brand-red hover:brightness-105 rounded-2xl shadow-xl hover:shadow-brand-red/20 hover:scale-103 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 text-sm md:text-base font-bold text-white bg-gradient-to-r from-brand-cyan to-brand-pink hover:brightness-105 rounded-2xl shadow-lg hover:shadow-brand-cyan/20 hover:scale-102 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <ShoppingBag className="w-5 h-5" />
                 Explorar Catálogo
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
 
               <button
                 onClick={() => onNavigate('servicios')}
-                className="w-full sm:w-auto px-8 py-4 text-base font-bold text-slate-800 hover:text-brand-cyan bg-white hover:bg-slate-50 border border-slate-200 hover:border-brand-cyan/30 rounded-2xl shadow-md hover:shadow-lg hover:scale-103 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 text-sm md:text-base font-bold text-white bg-slate-700 hover:bg-slate-800 rounded-2xl shadow-md hover:shadow-slate-700/10 hover:scale-102 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Printer className="w-5 h-5 text-brand-cyan" />
-                Calcular Impresión
+                <Printer className="w-5 h-5" />
+                Copias, Anillados y Gráfica
+              </button>
+
+              <button
+                onClick={() => {
+                  const el = document.getElementById('calculador');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    onNavigate('servicios');
+                  }
+                }}
+                className="w-full sm:w-auto px-6 py-3.5 text-sm md:text-base font-bold text-slate-800 hover:text-brand-cyan bg-white hover:bg-slate-50 border border-slate-200 hover:border-brand-cyan/30 rounded-2xl shadow-md hover:shadow-lg hover:scale-102 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Calculator className="w-5 h-5 text-brand-cyan" />
+                Cotizador de Impresiones
               </button>
             </motion.div>
 
@@ -123,14 +137,6 @@ export default function Hero({ onNavigate }: HeroProps) {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="relative mx-auto max-w-[380px] sm:max-w-[420px] lg:max-w-full">
-              {/* Outer frame decorations */}
-              <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-brand-cyan/20 flex items-center justify-center animate-bounce-slow">
-                <Paintbrush className="w-6 h-6 text-brand-cyan" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-20 h-20 rounded-full bg-brand-pink/20 flex items-center justify-center animate-pulse">
-                <Printer className="w-8 h-8 text-brand-red" />
-              </div>
-
               {/* Main Graphic Mockup */}
               <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl border-4 border-slate-100 p-4">
                 <img 
@@ -139,28 +145,6 @@ export default function Hero({ onNavigate }: HeroProps) {
                   className="rounded-2xl w-full h-[320px] sm:h-[400px] object-cover"
                   referrerPolicy="no-referrer"
                 />
-                
-                {/* Float Card 1: Services preview */}
-                <div className="absolute bottom-10 -left-6 sm:-left-8 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-wiggle max-w-[200px]">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-cyan/10 text-brand-cyan shrink-0 animate-pulse">
-                    <Printer className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="block text-xs font-bold text-slate-800">Fotocopias e Impresiones</span>
-                    <span className="block text-[10px] text-slate-400">En el día</span>
-                  </div>
-                </div>
-
-                {/* Float Card 2: Supplies */}
-                <div className="absolute top-12 -right-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 max-w-[180px]">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-red/10 text-brand-red shrink-0">
-                    <Sparkles className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="block text-xs font-bold text-slate-800">Útiles de Arte</span>
-                    <span className="block text-[10px] text-slate-500">Todo para Crear ⭐</span>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>

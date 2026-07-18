@@ -25,9 +25,9 @@ export default function Navbar({
 
   const menuItems = [
     { id: 'inicio', label: 'Inicio' },
+    { id: 'promociones', label: 'Promos' },
     { id: 'productos', label: 'Catálogo' },
     { id: 'servicios', label: 'Servicios' },
-    { id: 'promociones', label: 'Promos' },
     { id: 'nosotros', label: 'Sobre Nosotros' },
     { id: 'contacto', label: 'Contacto' },
   ];

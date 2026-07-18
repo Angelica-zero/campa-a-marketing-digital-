@@ -53,7 +53,7 @@ export default function App() {
   // Sync scroll section changes to active navigation highlights
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['inicio', 'productos', 'servicios', 'promociones', 'nosotros', 'contacto'];
+      const sections = ['inicio', 'promociones', 'productos', 'servicios', 'nosotros', 'contacto'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -125,7 +125,7 @@ ${listContent}
 *Por favor confirmame la disponibilidad y coordinamos el retiro o envío. ¡Gracias!*`;
 
     const encodedText = encodeURIComponent(messageString);
-    const whatsappQueryUrl = `https://wa.me/${STORE_INFO.phone.replace('+', '')}?text=${encodedText}`;
+    const whatsappQueryUrl = `${STORE_INFO.whatsappUrl}?text=${encodedText}`;
     window.open(whatsappQueryUrl, '_blank');
   };
 
@@ -158,54 +158,12 @@ ${listContent}
           document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
         }} />
 
-        {/* Categories Spotlight (Quick visual transition) */}
-        <section className="bg-white py-12 border-y border-slate-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              
-              <div className="flex items-center gap-4 p-5 rounded-2xl bg-brand-cyan/5 border border-brand-cyan/10">
-                <div className="p-3 bg-brand-cyan rounded-xl text-white">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="block text-sm font-extrabold text-slate-800 font-display">Surtido Creativo</span>
-                  <span className="block text-xs text-slate-500">Inspiración en cada esquina</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-5 rounded-2xl bg-brand-pink/5 border border-brand-pink/15">
-                <div className="p-3 bg-brand-pink rounded-xl text-slate-900">
-                  <Heart className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="block text-sm font-extrabold text-slate-800 font-display">Atención de Confianza</span>
-                  <span className="block text-xs text-slate-500">Asesoramiento familiar</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-5 rounded-2xl bg-brand-red/5 border border-brand-red/10">
-                <div className="p-3 bg-brand-red rounded-xl text-white">
-                  <Printer className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="block text-sm font-extrabold text-slate-800 font-display">Servicios en el Acto</span>
-                  <span className="block text-xs text-slate-500">Anillados y laminaciones rápidas</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
-                <div className="p-3 bg-slate-900 rounded-xl text-white">
-                  <Clock className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="block text-sm font-extrabold text-slate-800 font-display">Horarios Amplios</span>
-                  <span className="block text-xs text-slate-500">Lun-Vie: 8-12 y 16-19:30 | Sáb: Mañana</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
+        {/* Promociones: Special discount packs */}
+        <Promotions 
+          onAddPromoToCart={handleAddConsultItem}
+          onRemovePromoToCart={handleRemoveConsultItem}
+          consultItems={consultItems}
+        />
 
         {/* Productos: Interactive Catalog */}
         <Catalog 
@@ -217,13 +175,6 @@ ${listContent}
         {/* Servicios: Copias, Impresiones & Calc */}
         <ServicesCalculator 
           onAddServiceEstimateToCart={handleAddConsultItem}
-        />
-
-        {/* Promociones: Special discount packs */}
-        <Promotions 
-          onAddPromoToCart={handleAddConsultItem}
-          onRemovePromoToCart={handleRemoveConsultItem}
-          consultItems={consultItems}
         />
 
         {/* Nosotros: 20 years history and custom values */}
@@ -427,7 +378,7 @@ ${listContent}
                       <div className="space-y-1.5">
                         <div className="flex justify-between items-baseline">
                           <span className="text-xs text-slate-500 font-medium">Lugar de Retiro</span>
-                          <span className="text-xs font-extrabold text-slate-800">Av. Corrientes 4567, CABA</span>
+                          <span className="text-xs font-extrabold text-slate-800">{STORE_INFO.address}</span>
                         </div>
                         <div className="flex justify-between items-baseline">
                           <span className="text-xs text-slate-500 font-medium">Subtotal Estimado</span>
@@ -486,7 +437,7 @@ ${listContent}
             </p>
 
             <a
-              href={`https://wa.me/${STORE_INFO.phone.replace('+', '')}?text=Hola+Libreria+Colores%2C+quiero+hacer+una+consulta+general.`}
+              href={`${STORE_INFO.whatsappUrl}?text=Hola+Libreria+Colores%2C+quiero+hacer+una+consulta+general.`}
               target="_blank"
               onClick={() => setShowWappBubble(false)}
               className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-600 hover:text-emerald-700"
@@ -498,7 +449,7 @@ ${listContent}
 
         {/* Brand Rounded WhatsApp Button */}
         <a
-          href={`https://wa.me/${STORE_INFO.phone.replace('+', '')}?text=Hola+Libreria+Colores%2C+quiero+hacer+una+consulta+general.`}
+          href={`${STORE_INFO.whatsappUrl}?text=Hola+Libreria+Colores%2C+quiero+hacer+una+consulta+general.`}
           target="_blank"
           className="pointer-events-auto flex items-center justify-center w-15 h-15 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 group relative border-2 border-white"
           title="Chatear por WhatsApp"

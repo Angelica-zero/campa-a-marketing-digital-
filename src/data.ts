@@ -284,13 +284,13 @@ export const PROMOTIONS: Promo[] = [
 export const STORE_INFO = {
   name: 'Librería Colores',
   tagline: 'Todo para aprender y crear',
-  phone: '+5491122334455', // Replace with fake but realistic whatsapp phone number
-  whatsappUrl: 'https://wa.me/5491122334455', // Simulated link with pre-filled message generator
+  phone: '+54 3456-434432', // Replace with fake but realistic whatsapp phone number
+  whatsappUrl: 'https://wa.me/5493456434432', // Simulated link with pre-filled message generator
   address: 'Italia 32, Villa del Rosario, Entre Ríos',
   schedule: 'Lunes a Viernes de 8:00 a 12:00 hs. y 16:00 a 19:30 hs. Sábados: Sólo por la mañana.',
-  email: 'contacto@libreriacolores.com.ar',
+  email: 'libreriacolores2004@gmail.com',
   social: {
-    instagram: '@libreria.colores',
+    instagram: '@libreria_coloress',
     facebook: 'LibreriaColoresOk',
   },
   aboutText: 'Librería Colores nació en el año 2004 con la vocación de proveer los mejores elementos para el estudio y el trabajo en nuestra comunidad. Con más de 20 años de trayectoria continuada, nos hemos convertido en un referente de cercanía, confianza y asesoramiento especializado para familias, estudiantes universitarios y oficinas de la zona.',

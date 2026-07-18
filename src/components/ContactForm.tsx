@@ -37,7 +37,7 @@ Quiero hacer una consulta sobre: *${formState.subject.toUpperCase()}*.
 "${formState.message}"`;
 
     const encodedText = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${STORE_INFO.phone.replace('+', '')}?text=${encodedText}`;
+    const whatsappUrl = `${STORE_INFO.whatsappUrl}?text=${encodedText}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -65,16 +65,21 @@ Quiero hacer una consulta sobre: *${formState.subject.toUpperCase()}*.
             {/* List details */}
             <div className="space-y-4.5">
               {/* Address */}
-              <div className="flex gap-4 p-4.5 bg-white rounded-2xl border border-slate-100 shadow-xs">
-                <div className="p-3 bg-rose-100 text-rose-600 rounded-xl shrink-0 h-fit">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Italia+32,+Villa+del+Rosario,+Entre+R%C3%ADos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-4 p-4.5 bg-white rounded-2xl border border-slate-100 shadow-xs hover:border-rose-200 hover:shadow-md transition-all duration-300 cursor-pointer group"
+              >
+                <div className="p-3 bg-rose-100 text-rose-600 rounded-xl shrink-0 h-fit group-hover:scale-105 transition-transform duration-300">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase font-bold text-slate-400">Nuestra Dirección</span>
-                  <span className="block text-sm font-extrabold text-slate-800 mt-0.5">{STORE_INFO.address}</span>
+                  <span className="block text-sm font-extrabold text-slate-800 mt-0.5 group-hover:text-rose-600 transition-colors">{STORE_INFO.address}</span>
                   <span className="block text-xs text-slate-400">Villa del Rosario, Entre Ríos</span>
                 </div>
-              </div>
+              </a>
 
               {/* Schedule */}
               <div className="flex gap-4 p-4.5 bg-white rounded-2xl border border-slate-100 shadow-xs">
@@ -89,37 +94,55 @@ Quiero hacer una consulta sobre: *${formState.subject.toUpperCase()}*.
               </div>
 
               {/* Telephone */}
-              <div className="flex gap-4 p-4.5 bg-white rounded-2xl border border-slate-100 shadow-xs">
-                <div className="p-3 bg-indigo-100 text-indigo-600 rounded-xl shrink-0 h-fit">
+              <a 
+                href={STORE_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-4 p-4.5 bg-white rounded-2xl border border-slate-100 shadow-xs hover:border-indigo-200 hover:shadow-md transition-all duration-300 cursor-pointer group"
+              >
+                <div className="p-3 bg-indigo-100 text-indigo-600 rounded-xl shrink-0 h-fit group-hover:scale-105 transition-transform duration-300">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase font-bold text-slate-400">Teléfono / WhatsApp</span>
-                  <span className="block text-sm font-extrabold text-slate-800 mt-0.5">{STORE_INFO.phone}</span>
+                  <span className="block text-sm font-extrabold text-slate-800 mt-0.5 group-hover:text-indigo-600 transition-colors">{STORE_INFO.phone}</span>
                   <span className="block text-xs text-slate-400">Respondemos de inmediato en horario comercial</span>
                 </div>
-              </div>
+              </a>
 
               {/* Mail */}
-              <div className="flex gap-4 p-4.5 bg-white rounded-2xl border border-slate-100 shadow-xs">
-                <div className="p-3 bg-emerald-100 text-emerald-600 rounded-xl shrink-0 h-fit">
+              <a 
+                href={`mailto:${STORE_INFO.email}`}
+                className="flex gap-4 p-4.5 bg-white rounded-2xl border border-slate-100 shadow-xs hover:border-emerald-200 hover:shadow-md transition-all duration-300 cursor-pointer group"
+              >
+                <div className="p-3 bg-emerald-100 text-emerald-600 rounded-xl shrink-0 h-fit group-hover:scale-105 transition-transform duration-300">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase font-bold text-slate-400">Correo Electrónico</span>
-                  <span className="block text-sm font-extrabold text-slate-800 mt-0.5">{STORE_INFO.email}</span>
+                  <span className="block text-sm font-extrabold text-slate-800 mt-0.5 group-hover:text-emerald-600 transition-colors">{STORE_INFO.email}</span>
                   <span className="block text-xs text-slate-400">Ideales para planos, tesis de muchas hojas o archivos pesados</span>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Social credentials */}
-            <div className="pt-4 flex items-center justify-center lg:justify-start gap-4">
+            <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Seguinos en redes:</span>
-              <a href="#" className="text-xs font-black text-rose-600 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-lg transition-colors">
+              <a 
+                href="https://instagram.com/libreria_coloress" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-xs font-black text-rose-600 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+              >
                 Instagram: {STORE_INFO.social.instagram}
               </a>
-              <a href="#" className="text-xs font-black text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors">
+              <a 
+                href="https://facebook.com/LibreriaColoresOk" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-xs font-black text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+              >
                 Facebook
               </a>
             </div>
