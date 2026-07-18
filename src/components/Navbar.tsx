@@ -36,10 +36,17 @@ export default function Navbar({
     setActiveSection(sectionId);
     setIsOpen(false);
     
-    // Smooth scroll to element if present
+    // Smooth scroll to element with offset to account for the sticky header (h-20 = 80px)
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
