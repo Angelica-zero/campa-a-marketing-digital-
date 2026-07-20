@@ -4,6 +4,21 @@
  */
 
 import { Product, Category, Service, Promo } from './types';
+import faberCastell12 from './assets/images/faber_castell_12_1784410247465.jpg';
+import cuadernoExito84 from './assets/images/cuaderno_exito_84h_1784410374238.jpg';
+import microfibrasFilgo10 from './assets/images/microfibras_filgo_10_1784410383243.jpg';
+import carpetaEscolar3 from './assets/images/carpeta_escolar_3_1784410500830.jpg';
+import resaltadoresPastel from './assets/images/resaltadores_pastel_corregido_1784411012752.jpg';
+import resmaPapelA4 from './assets/images/resma_papel_a4_1784410677883.jpg';
+import biblioratoOficio from './assets/images/bibliorato_oficio_1784410689998.jpg';
+import abrochadoraMetalica from './assets/images/abrochadora_metalica_1784410700990.jpg';
+import acuarelasProfesionales from './assets/images/acuarelas_profesionales_1784410712392.jpg';
+import pincelesSinteticos from './assets/images/pinceles_sinteticos_1784410722664.jpg';
+import acrilicosDecorativos6 from './assets/images/acrilicos_decorativos_6_1784410733604.jpg';
+import notasAutoadhesivas4 from './assets/images/notas_autoadhesivas_4_1784410743739.jpg';
+import comboEscolarPrimaria from './assets/images/combo_escolar_primaria_1784410758268.jpg';
+import kitSecundariaUniversidad from './assets/images/kit_secundaria_universidad_1784410768324.jpg';
+import kitOficinaBasica from './assets/images/kit_oficina_basica_1784410780076.jpg';
 
 export const CATEGORIES: Category[] = [
   {
@@ -43,7 +58,7 @@ export const PRODUCTS: Product[] = [
     name: 'Lápices de Colores x12 Faber-Castell',
     description: 'Lápices ecológicos redondos de alta calidad con mina súper resistente y colores brillantes.',
     price: 3400,
-    imageUrl: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&auto=format&fit=crop&q=80',
+    imageUrl: faberCastell12,
     category: 'escolar',
     isFeatured: true,
     inStock: true,
@@ -54,7 +69,7 @@ export const PRODUCTS: Product[] = [
     name: 'Cuaderno Universitario Rayado Éxito',
     description: 'Cuaderno tapa dura de 84 hojas con espiral metálico reforzado y hojas de 80g de alta calidad.',
     price: 3200,
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80',
+    imageUrl: cuadernoExito84,
     category: 'papeleria',
     isFeatured: true,
     inStock: true,
@@ -65,7 +80,7 @@ export const PRODUCTS: Product[] = [
     name: 'Microfibras Filgo Liner 0.4 Flow x10',
     description: 'Set de 10 microfibras de colores vibrantes para dibujo técnico, lettering y toma de apuntes.',
     price: 5200,
-    imageUrl: 'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=600&auto=format&fit=crop&q=80',
+    imageUrl: microfibrasFilgo10,
     category: 'escolar',
     isFeatured: true,
     inStock: true,
@@ -76,7 +91,7 @@ export const PRODUCTS: Product[] = [
     name: 'Carpeta Escolar N°3 con Cordón',
     description: 'Carpeta de 3 ganchos de cartón prensado reforzado, ideal para hojas escolares N°3.',
     price: 2500,
-    imageUrl: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&auto=format&fit=crop&q=80',
+    imageUrl: carpetaEscolar3,
     category: 'escolar',
     isFeatured: false,
     inStock: true,
@@ -87,7 +102,7 @@ export const PRODUCTS: Product[] = [
     name: 'Resaltadores Swing Cool x6 Pastel Maped',
     description: 'Kit de 6 resaltadores de tonos pastel con tecnología antiescurrimiento y trazo suave.',
     price: 4900,
-    imageUrl: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&auto=format&fit=crop&q=80',
+    imageUrl: resaltadoresPastel,
     category: 'escolar',
     isFeatured: true,
     inStock: true,
@@ -100,7 +115,7 @@ export const PRODUCTS: Product[] = [
     name: 'Resma de Papel A4 Report 75g (500 hojas)',
     description: 'Papel ultra blanco multifunción ideal para impresos láser, inkjet y fotocopiadoras.',
     price: 7800,
-    imageUrl: 'https://images.unsplash.com/photo-1626379616459-b2ce1d9decbc?w=600&auto=format&fit=crop&q=80',
+    imageUrl: resmaPapelA4,
     category: 'papeleria',
     isFeatured: true,
     inStock: true,
@@ -111,7 +126,7 @@ export const PRODUCTS: Product[] = [
     name: 'Archivador Bibliorato Oficio Reforzado',
     description: 'Bibliorato de cartón forrado con herraje palanca niquelado y puntera metálica protectora.',
     price: 3900,
-    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop&q=80',
+    imageUrl: biblioratoOficio,
     category: 'oficina',
     isFeatured: false,
     inStock: true,
@@ -122,7 +137,7 @@ export const PRODUCTS: Product[] = [
     name: 'Abrochadora de Mesa Metálica Pizzini',
     description: 'Abrochadora profesional metálica con capacidad para hasta 25 hojas de papel bond standard.',
     price: 6400,
-    imageUrl: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&auto=format&fit=crop&q=80',
+    imageUrl: abrochadoraMetalica,
     category: 'oficina',
     isFeatured: false,
     inStock: true,
@@ -135,7 +150,7 @@ export const PRODUCTS: Product[] = [
     name: 'Acuarelas Profesionales x24 Pastillas',
     description: 'Paleta completa de pigmentos de alta saturación con pincel recargable con depósito de agua.',
     price: 8500,
-    imageUrl: 'https://images.unsplash.com/photo-1604076913837-52ab5629fba9?w=600&auto=format&fit=crop&q=80',
+    imageUrl: acuarelasProfesionales,
     category: 'artistica',
     isFeatured: true,
     inStock: true,
@@ -146,7 +161,7 @@ export const PRODUCTS: Product[] = [
     name: 'Set de Pinceles Sintéticos x6 Diferentes Puntas',
     description: 'Pinceles de pelo de nylon fino para acrílicos, acuarelas y óleo. Incluye chatos y redondos.',
     price: 3600,
-    imageUrl: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&auto=format&fit=crop&q=80',
+    imageUrl: pincelesSinteticos,
     category: 'artistica',
     isFeatured: false,
     inStock: true,
@@ -157,7 +172,7 @@ export const PRODUCTS: Product[] = [
     name: 'Acrílicos Decorativos Eterna x6 Colores Premium',
     description: 'Pintura acrílica de excelente consistencia y gran poder cubritivo. Frascos de 50ml cada uno.',
     price: 5400,
-    imageUrl: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&auto=format&fit=crop&q=80',
+    imageUrl: acrilicosDecorativos6,
     category: 'artistica',
     isFeatured: true,
     inStock: true,
@@ -170,7 +185,7 @@ export const PRODUCTS: Product[] = [
     name: 'Notas Autoadhesivas 76x76mm Pastel x4',
     description: 'Tacos de notas reposicionables en suaves colores pastel para recordatorios de oficina o estudio.',
     price: 2400,
-    imageUrl: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&auto=format&fit=crop&q=80',
+    imageUrl: notasAutoadhesivas4,
     category: 'oficina',
     isFeatured: false,
     inStock: true,
@@ -233,7 +248,7 @@ export const PROMOTIONS: Promo[] = [
     description: 'Kit pensado especialmente para el comienzo de clases. ¡Todo lo que necesitan en una sola caja!',
     price: 12500,
     originalPrice: 15500,
-    imageUrl: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&auto=format&fit=crop&q=80',
+    imageUrl: comboEscolarPrimaria,
     items: [
       '1 Caja de Lápices de Colores x12 Faber-Castell',
       '2 Lápices negros de grafito HB2',
@@ -251,7 +266,7 @@ export const PROMOTIONS: Promo[] = [
     description: 'El combo de resaltadores, cuadernos y lapiceras ideal para llevar al aula y organizar tu estudio.',
     price: 16900,
     originalPrice: 21200,
-    imageUrl: 'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=600&auto=format&fit=crop&q=80',
+    imageUrl: kitSecundariaUniversidad,
     items: [
       '2 Cuadernos Universitarios Rayados Éxito',
       '4 Lapiceras Bic Cristal (Azul, Negro, Rojo, Verde)',
@@ -268,7 +283,7 @@ export const PROMOTIONS: Promo[] = [
     description: 'Equipa tu escritorio o espacio de home-office con los indispensables de papelería y archivo.',
     price: 19500,
     originalPrice: 24500,
-    imageUrl: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&auto=format&fit=crop&q=80',
+    imageUrl: kitOficinaBasica,
     items: [
       '1 Resma de Papel A4 Hojas Blancas Report75g',
       '2 Archivadores Biblioratos reforzados',
